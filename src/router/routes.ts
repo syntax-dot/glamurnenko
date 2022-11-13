@@ -9,7 +9,7 @@ import ServicesPage from '../views/ServicesPage.vue'
 import TrainingsPage from '../views/TrainingsPage.vue'
 
 export const routes: RouteRecordRaw[] = [
-  { path: '', component: HomePage, name: 'home' },
+  { path: '/', component: HomePage, name: 'home' },
   { path: '/blog', component: BlogPage, name: 'blog' },
   { path: '/contacts', component: ContactsPage, name: 'contacts' },
   { path: '/free', component: FreePage, name: 'free' },

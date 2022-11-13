@@ -1,31 +1,63 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div :class="$style.root">
+    <div :class="$style.header">
+      <HeaderMenu/>
+    </div>
+    <div :class="$style.content">
+      <router-view/>
+    </div>
+
+    <div :class="$style.footer"/>
+    <Footer/>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<script  lang="ts" setup>
+import { Footer } from './components/Footer'
+import { HeaderMenu } from './components/HeaderMenu'
+</script>
+
+<style module>
+:root {
+  /* background-color: #202124; */
+  background-color: #000;
+  /* background-color: #ffffff; */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.root {
+  display: grid;
+  margin-left: 390px;
+  margin-right: 375px;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-areas: 'header' 'content' 'footer';
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+</style>
+
+<style lang="css">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app,
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Oranienbaum', serif;
 }
 </style>

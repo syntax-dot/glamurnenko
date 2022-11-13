@@ -33,6 +33,29 @@ const links: NavigationLinkProps[] = [
 
 <style module>
 .root {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
+  /* grid-template-rows: 1fr; */
+  height: 124px;
+  box-sizing: border-box;
+}
 
+.left {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+  /* margin-left: 40px; */
+}
+
+.right {
+  display: grid;
+  grid-template-columns: 100px max-content;
+  grid-gap: 66px;
 }
 </style>
