@@ -59,4 +59,23 @@ const links: NavigationLinkProps[] = [
   grid-template-columns: 100px max-content;
   grid-gap: 66px;
 }
+
+@media screen and (max-width: 1440px) {
+  .root {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .left {
+    grid-gap: 34px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+  }
+
+  .left {
+  }
+}
 </style>

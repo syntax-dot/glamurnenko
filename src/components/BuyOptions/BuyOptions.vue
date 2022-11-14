@@ -32,7 +32,7 @@
           <td>&#10004;</td>
           <td>&#10004;</td>
         </tr>
-        <tr>
+        <tr :class="$style.price">
           <th>Цена</th>
           <th>7 999</th>
           <th>9 999</th>
@@ -73,6 +73,7 @@
   background-color: #fdc300;
 }
 tbody {
+  height: 600px;
   background-color: #fff000;
   font-weight: bold;
 }
@@ -89,8 +90,16 @@ td > div {
   font-size: 10px;
 }
 
+td:first-child {
+  text-align: left;
+}
+
 .root > div {
   background: #fff000;
+}
+
+.price > th {
+  font-size: 24px;
 }
 
 .div1 { grid-area: 7 / 2 / 8 / 5; }

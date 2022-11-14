@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/valid-v-for -->
 <template>
   <div :class="$style.root">
     <div :class="$style.intro">
@@ -36,23 +37,51 @@
       </div>
     </div>
 
-    <BuyOptions/>
+    <BuyOptions :class="$style.buy_options"/>
 
     <div>
       <img :class="$style.image" src="../../assets/Images/preview/2razmera_books_preview.png">
     </div>
 
     <ServicePackages/>
+
+    <ChatInstructions v-for="description in chatDescriptions"
+                      :pathToImg="description.pathToImg"
+                      :description="description.description"/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { BuyOptions } from '../BuyOptions'
+import { ChatInstructionsProps } from '../ChatInstructions/ChatInstructions.props'
+import ChatInstructions from '../ChatInstructions/ChatInstructions.vue'
 import { ServicePackages } from '../ServicePackages'
+
+import chat1 from '../../assets/Images/chat/first-class-stylish-help-chat-1.jpg'
+import chat2 from '../../assets/Images/chat/first-class-stylish-help-chat-2.jpg'
+import chat3 from '../../assets/Images/chat/first-class-stylish-help-chat-3.jpg'
+import chat4 from '../../assets/Images/chat/first-class-stylish-help-chat-4.jpg'
 
 const introDescription = 'Онлайн-консультация стилиста в вашем мобильном телефоне когда вам нужно: на шоппинге, во время разбора гардероба, когда подбираете комплект, просто когда нужен совет'
 
-// const description =
+const chatDescriptions: ChatInstructionsProps[] = [
+  {
+    pathToImg: chat1,
+    description: 'Клиентка просит стилиста выбрать одну из курток милитари',
+  },
+  {
+    pathToImg: chat2,
+    description: 'Стилист запрашивает дополнительные фотографии для того, что бы выбор был 100% удачным',
+  },
+  {
+    pathToImg: chat3,
+    description: 'Стилист анализирует вещи с учётом уже имеющихся вещей клиентки и помогает сделать правильный выбор',
+  },
+  {
+    pathToImg: chat4,
+    description: 'Благодарная клиентка делится впечатлениями от полученной услуги и радостью удачных покупок',
+  },
+]
 </script>
 
 <style module>
@@ -139,5 +168,9 @@ const introDescription = 'Онлайн-консультация стилиста
 .instruction {
   padding: 0 64px 0px 64px;
   line-height: 1.4;
+}
+
+.buy_options {
+  margin: 30px 50px;
 }
 </style>

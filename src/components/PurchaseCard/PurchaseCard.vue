@@ -72,13 +72,14 @@ defineProps<PurchaseCardProps>()
 .old_price {
   color: #bfbfbf;
   position: relative;
+  text-decoration: none;
 }
 
-.old_price::before {
+.old_price:before {
   content: " ";
   display: block;
   width: 100%;
-  border-top: 2px solid rgba(red, 0.8);
+  border-top: 2px solid rgba(255, 0, 0, 0.8);
   height: 12px;
   position: absolute;
   bottom: 0;

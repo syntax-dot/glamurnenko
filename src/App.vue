@@ -8,6 +8,7 @@
     </div>
 
     <div :class="$style.footer"/>
+    <UpButton :class="$style.up_btn"/>
     <Footer/>
   </div>
 </template>
@@ -15,6 +16,7 @@
 <script  lang="ts" setup>
 import { Footer } from './components/Footer'
 import { HeaderMenu } from './components/HeaderMenu'
+import { UpButton } from './components/UpButton'
 </script>
 
 <style module>
@@ -29,6 +31,24 @@ import { HeaderMenu } from './components/HeaderMenu'
   margin-right: 375px;
   grid-template-rows: max-content 1fr max-content;
   grid-template-areas: 'header' 'content' 'footer';
+}
+
+.footer {
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 1440px) {
+  .root {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 </style>
 
