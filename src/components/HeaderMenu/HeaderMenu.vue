@@ -44,6 +44,7 @@ const links: NavigationLinkProps[] = [
   /* grid-template-rows: 1fr; */
   height: 124px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .left {

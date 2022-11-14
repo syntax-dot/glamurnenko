@@ -37,11 +37,18 @@
     </div>
 
     <BuyOptions/>
+
+    <div>
+      <img :class="$style.image" src="../../assets/Images/preview/2razmera_books_preview.png">
+    </div>
+
+    <ServicePackages/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { BuyOptions } from '../BuyOptions'
+import { ServicePackages } from '../ServicePackages'
 
 const introDescription = 'Онлайн-консультация стилиста в вашем мобильном телефоне когда вам нужно: на шоппинге, во время разбора гардероба, когда подбираете комплект, просто когда нужен совет'
 
