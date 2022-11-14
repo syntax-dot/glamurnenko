@@ -3,10 +3,10 @@
     <table style="width: 100%;">
       <tbody>
         <tr>
-          <th>Вы получаете:</th>
-          <th>Теория</th>
-          <th>Практика</th>
-          <th>VIP</th>
+          <th width="50%">Вы получаете:</th>
+          <th width="200">Теория</th>
+          <th width="200">Практика</th>
+          <th width="200">VIP</th>
         </tr>
         <tr>
           <td>Все материалы тренинга</td>
@@ -40,15 +40,31 @@
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="3" :class="$style.symbols">
+            <span v-for="symbol in symbols"
+                  :key="symbol"
+                  :class="$style.symbol">
+              {{ symbol }}
+            </span>
+          </td>
         </tr>
-        <tr>
+        <tr :class="$style.buttons">
           <td>&nbsp;</td>
-          <td>Заказать</td>
-          <td>Заказать</td>
-          <td>Заказать</td>
+          <td>
+            <BaseButton title="Заказать"
+                        color="#000"
+                        @click="clickHandler"/>
+          </td>
+          <td>
+            <BaseButton title="Заказать"
+                        color="#000"
+                        @click="clickHandler"/>
+          </td>
+          <td>
+            <BaseButton title="Заказать"
+                        color="#000"
+                        @click="clickHandler"/>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -56,22 +72,20 @@
 </template>
 
 <script lang="ts" setup>
+import { BaseButton } from '../BaseButton'
 
+const symbols = '₽₴$€'
+
+function clickHandler() {
+  console.log('click')
+}
 </script>
 
 <style module>
 .root {
-  /* display: grid;
-  box-sizing: border-box;
-  gap: 2px;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(8, 1fr);
-  grid-auto-flow: row;
-  background-color: #ffd100;
-  font-weight: bold;
-  text-align: center; */
   background-color: #fdc300;
 }
+
 tbody {
   height: 600px;
   background-color: #fff000;
@@ -81,6 +95,7 @@ tbody {
 th {
   text-transform: uppercase;
   background-color: #ffd100;
+  font-size: 22px;
 }
 
 td {
@@ -94,12 +109,34 @@ td:first-child {
   text-align: left;
 }
 
+td, th {
+  padding: 0 20px 0 20px;
+}
+
+th:first-child {
+  text-align: left;
+}
+
 .root > div {
   background: #fff000;
 }
 
 .price > th {
   font-size: 24px;
+}
+
+.symbol {
+  border: 1px solid #000;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  padding: 6px 8px;
+  margin: 8px;
+}
+
+.buttons > td {
+  font-weight: bold;
+  height: 70px;
 }
 
 .div1 { grid-area: 7 / 2 / 8 / 5; }

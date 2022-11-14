@@ -1,6 +1,10 @@
 <template>
   <div :class="$style.root">
-    <button :class="$style.btn" @click="emit('click')"> {{ title }} </button>
+    <button :class="$style.btn"
+            :style="{ backgroundColor: color?? `#ff0c3a` }"
+            @click="emit('click')">
+      {{ title }}
+    </button>
   </div>
 </template>
 

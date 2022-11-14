@@ -29,7 +29,12 @@ defineProps<ChatInstructionsProps>()
   grid-template-columns: max-content auto;
 }
 .img {
-  height: 200px;
-  width: 100px;
+  height: 800px;
+  width: 400px;
+}
+
+.description {
+  text-align: left;
+  margin: auto;
 }
 </style>
