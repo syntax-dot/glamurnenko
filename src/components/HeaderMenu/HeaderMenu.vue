@@ -51,7 +51,7 @@ const links: NavigationLinkProps[] = [
 
 <style module>
 .root {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: 124px;
@@ -65,9 +65,10 @@ const links: NavigationLinkProps[] = [
 }
 
 .fixed {
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: 60px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 1);
   z-index: 3;
 }
 
