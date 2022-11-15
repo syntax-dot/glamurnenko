@@ -1,18 +1,26 @@
 <template>
   <div :class="$style.root">
-    Здесь пока ничего нет
-    <BaseButton title="Вернуться"
-                @click="$router.push('/')"/>
+    <IsEmpty/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BaseButton } from '../components/BaseButton'
-
+import { IsEmpty } from '../components/IsEmpty'
 </script>
 
 <style module>
 .root {
 
+}
+
+.empty {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+}
+
+.empty > h1 {
+  text-align: center;
+  text-transform: uppercase;
 }
 </style>

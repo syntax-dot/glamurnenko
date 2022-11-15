@@ -1,14 +1,11 @@
 <template>
   <div :class="$style.root">
-    Здесь пока ничего нет
-    <BaseButton title="Вернуться"
-                @click="$router.push('/')"/>
+    <IsEmpty/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BaseButton } from '../components/BaseButton'
-
+import { IsEmpty } from '../components/IsEmpty'
 </script>
 
 <style module>
