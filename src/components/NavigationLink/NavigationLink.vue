@@ -13,9 +13,7 @@ const props = defineProps<NavigationLinkProps>()
 <style module>
 .root {
   font-size: 18px;
-  /* font-weight: bold; */
   text-transform: uppercase;
-  /* width: fit-content; */
   padding-bottom: 8px;
   padding-top: 8px;
   color: rgba(255, 255, 255, 1);

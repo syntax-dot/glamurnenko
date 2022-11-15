@@ -1,11 +1,13 @@
 <template>
-  <div :class="$style.root">
-    <button :class="$style.btn"
-            :style="{ backgroundColor: color?? `#ff0c3a` }"
-            @click="emit('click')">
-      {{ title }}
-    </button>
-  </div>
+  <button :class="$style.btn"
+          :style="{
+            backgroundColor: color ?? '#ff0c3a',
+            width: width ?? '240px',
+            height: height ?? '50px',
+          }"
+          @click="emit('click')">
+    {{ title }}
+  </button>
 </template>
 
 <script lang="ts" setup>
@@ -16,14 +18,7 @@ const emit = defineEmits<BaseButtonEmits>()
 </script>
 
 <style module>
-.root {
-
-}
-
 .btn {
-  width: 240px;
-  height: 50px;
-  background-color: #ff0c3a;
   border: none;
   border-radius: 4px;
   color: #fff;

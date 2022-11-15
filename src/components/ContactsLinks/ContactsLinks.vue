@@ -13,6 +13,9 @@
 .root {
   text-align: right;
   font-size: 7px;
+}
 
+.root > h1 {
+  width: 100%;
 }
 </style>

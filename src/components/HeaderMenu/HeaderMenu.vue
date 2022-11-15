@@ -1,5 +1,7 @@
 <template>
-  <div :class="$style.root">
+  <div :class="[$style.root, {
+    [$style.fixed]: scrollTop > 650
+  }]">
     <div :class="$style.left">
       <NavigationLink v-for="link, index in links"
                       :key="index"
@@ -19,6 +21,22 @@ import { ContactsLinks } from '../ContactsLinks'
 import { NavigationLink } from '../NavigationLink'
 import { NavigationLinkProps } from '../NavigationLink/NavigationLink.props'
 import { SocialLinks } from '../SocialLinks'
+import { onMounted, onUnmounted, ref } from 'vue'
+
+const scrollTop = ref(0)
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+function handleScroll(e: Event) {
+  scrollTop.value = window.scrollY
+  console.log(e)
+}
 
 const links: NavigationLinkProps[] = [
   { title: 'Блог', to: { name: 'blog' } },
@@ -33,49 +51,43 @@ const links: NavigationLinkProps[] = [
 
 <style module>
 .root {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-content: space-between;
-  align-items: center;
-  /* padding-left: 20px; */
-  /* padding-right: 20px; */
-  /* grid-template-rows: 1fr; */
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 124px;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
-}
-
-.left {
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.fixed {
+  position: fixed;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.left, .right {
+  display: grid;
+  grid-auto-flow: column;
+}
+.left {
+  justify-content: start;
   grid-gap: 24px;
-  /* margin-left: 40px; */
 }
 
 .right {
-  display: grid;
-  grid-template-columns: 100px max-content;
+  justify-content: end;
   grid-gap: 66px;
 }
 
-@media screen and (max-width: 1440px) {
-  .root {
-    padding-left: 20px;
-    padding-right: 20px;
+/* @media screen and (max-width: 1024px) {
+  .right {
+    justify-content: start;
   }
-
-  .left {
-    grid-gap: 34px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .root {
-  }
-
-  .left {
-  }
-}
+} */
 </style>

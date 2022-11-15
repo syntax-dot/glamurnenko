@@ -1,15 +1,15 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.header">
-      <HeaderMenu/>
-    </div>
+    <HeaderMenu :class="$style.header"/>
+
     <div :class="$style.content">
       <router-view/>
     </div>
 
-    <div :class="$style.footer"/>
-    <UpButton :class="$style.up_btn"/>
-    <Footer/>
+    <div :class="$style.footer">
+      <UpButton :class="$style.up_btn"/>
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -21,33 +21,45 @@ import { UpButton } from './components/UpButton'
 
 <style module>
 :root {
-  /* background-color: #202124; */
   background-color: #000;
-  /* background-color: #ffffff; */
 }
 .root {
   display: grid;
-  margin-left: 390px;
-  margin-right: 375px;
-  grid-template-rows: max-content 1fr max-content;
-  grid-template-areas: 'header' 'content' 'footer';
+  margin: 0 380px;
+  /* grid-template-rows: max-content 1fr max-content;
+  grid-template-areas: 'header' 'content' 'footer'; */
+}
+
+.root, .header {
+
+}
+.header {
+  width: 100%;
+  /* padding: 0 380px; */
+  /* align-self: center; */
+}
+
+.content {
+  margin-top: 123px;
 }
 
 .footer {
   padding-top: 30px;
 }
 
+.up_btn {
+  text-align: center;
+}
+
 @media screen and (max-width: 1440px) {
   .root {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 120px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .root {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
   }
 }
 </style>

@@ -4,9 +4,9 @@
       <tbody>
         <tr>
           <th width="50%">Вы получаете:</th>
-          <th width="200">Теория</th>
-          <th width="200">Практика</th>
-          <th width="200">VIP</th>
+          <th width="200px">Теория</th>
+          <th width="200px">Практика</th>
+          <th width="200px">VIP</th>
         </tr>
         <tr>
           <td>Все материалы тренинга</td>
@@ -52,16 +52,22 @@
           <td>&nbsp;</td>
           <td>
             <BaseButton title="Заказать"
+                        width="100%"
+                        height="40px"
                         color="#000"
                         @click="clickHandler"/>
           </td>
           <td>
             <BaseButton title="Заказать"
+                        width="100%"
+                        height="40px"
                         color="#000"
                         @click="clickHandler"/>
           </td>
           <td>
             <BaseButton title="Заказать"
+                        width="100%"
+                        height="40px"
                         color="#000"
                         @click="clickHandler"/>
           </td>
@@ -88,6 +94,7 @@ function clickHandler() {
 
 tbody {
   height: 600px;
+  width: 1200px;
   background-color: #fff000;
   font-weight: bold;
 }
@@ -138,6 +145,4 @@ th:first-child {
   font-weight: bold;
   height: 70px;
 }
-
-.div1 { grid-area: 7 / 2 / 8 / 5; }
 </style>

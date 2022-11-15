@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <BuyOptions :class="$style.buy_options"/>
+    <TableBuyOptions :class="$style.buy_options"/>
 
     <div>
       <img :class="$style.image" src="../../assets/Images/preview/2razmera_books_preview.png">
@@ -45,14 +45,22 @@
 
     <ServicePackages/>
 
-    <ChatInstructions v-for="description in chatDescriptions"
-                      :pathToImg="description.pathToImg"
-                      :description="description.description"/>
+    <br>
+
+    <div :class="$style.chat">
+      <h1 align="left">КАК ВСЁ ПРОИСХОДИТ</h1>
+
+      <br>
+
+      <ChatInstructions v-for="description in chatDescriptions"
+                        :pathToImg="description.pathToImg"
+                        :description="description.description"/>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BuyOptions } from '../BuyOptions'
+import { TableBuyOptions } from '../TableBuyOptions'
 import { ChatInstructionsProps } from '../ChatInstructions/ChatInstructions.props'
 import ChatInstructions from '../ChatInstructions/ChatInstructions.vue'
 import { ServicePackages } from '../ServicePackages'
@@ -93,6 +101,7 @@ const chatDescriptions: ChatInstructionsProps[] = [
   width: 100%;
   /* height: 100%; */
   z-index: 2;
+  padding-bottom: 40px;
 }
 
 .intro  {
@@ -144,6 +153,7 @@ const chatDescriptions: ChatInstructionsProps[] = [
   background-repeat: no-repeat;
   z-index: 1;
   user-select: none;
+  margin-bottom: 108px;
 }
 
 .discription {
@@ -172,5 +182,14 @@ const chatDescriptions: ChatInstructionsProps[] = [
 
 .buy_options {
   margin: 30px 50px;
+}
+
+.chat {
+  margin: 70px 280px 44px 250px;
+}
+
+.chat > h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 </style>
