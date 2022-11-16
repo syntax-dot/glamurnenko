@@ -1,12 +1,11 @@
 version: '3.8'
 services:
   frontend:
-    image: frontend
+    image: spa
     build:
       args:
         - NODE_ENV=production
-        - VITE_SERVER_URL=http://localhost:3030
       context: .
-      dockerfile: src/Dockerfile
+      dockerfile: .
     ports:
       - "8080:80"

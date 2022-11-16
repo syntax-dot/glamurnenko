@@ -1,6 +1,5 @@
 version: '3.8'
 services:
-  
   nginx:
     image: nginx:latest
     ports:
@@ -24,7 +23,6 @@ services:
     build:
       args:
         - NODE_ENV=production
-        - VITE_SERVER_URL=http://localhost:3030
       context: .
       dockerfile: src/Dockerfile
     ports:
