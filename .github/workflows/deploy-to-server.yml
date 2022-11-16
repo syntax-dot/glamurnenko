@@ -1,0 +1,64 @@
+name: Deploy to Server
+
+on:
+  # push:
+  #   branches: [ "master" ]
+
+  # pull_request:
+  #   branches: [ "master" ]
+
+  workflow_call:
+
+  workflow_dispatch:
+
+jobs:
+  docker_build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+
+      - name: Create .env
+        run: |
+          echo "CLIENT_URL=https://syntax.fun" >> .env 
+
+      - name: Copy nginx.conf
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./nginx/conf/nginx.conf
+          remote: ./nginx/conf/nginx.conf
+          host: ${{ secrets.HOST_ADDRESS }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+
+      - name: Copy docker-compose.yaml
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: docker-compose.prod.yaml
+          remote: docker-compose.yaml
+          host: ${{ secrets.HOST_ADDRESS }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+
+      - name: Copy .env
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./.env
+          remote: ./.env
+          host: ${{ secrets.HOST_ADDRESS }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_ADDRESS }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          script: | 
+            docker-compose pull
+            docker-compose down
+            docker-compose up -d
