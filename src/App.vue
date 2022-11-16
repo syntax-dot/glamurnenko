@@ -26,21 +26,10 @@ import { UpButton } from './components/UpButton'
 .root {
   display: grid;
   margin: 0 380px;
-  /* grid-template-rows: max-content 1fr max-content;
-  grid-template-areas: 'header' 'content' 'footer'; */
 }
 
-.root, .header {
-
-}
 .header {
   width: 100%;
-  /* padding: 0 380px; */
-  /* align-self: center; */
-}
-
-.content {
-  margin-top: 123px;
 }
 
 .footer {

@@ -38,7 +38,7 @@ function toTop() {
 <style module>
 .root {
   /* margin: 0 auto; */
-  /* position: fixed;
+  /* position: sticky;
   top: 90%;
   left: 50%;
   z-index: 2; */

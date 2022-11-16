@@ -68,7 +68,7 @@ const links: NavigationLinkProps[] = [
   position: sticky;
   top: 0;
   height: 60px;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 3;
 }
 

@@ -51,5 +51,6 @@
   font-size: 15px;
   letter-spacing: -1px;
   font-weight: 500;
+  text-decoration: underline;
 }
 </style>

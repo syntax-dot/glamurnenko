@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+      - 3030:3030
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+  
+  frontend:
+    image: frontend
+    build:
+      args:
+        - NODE_ENV=production
+        - VITE_SERVER_URL=http://localhost:3030
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - "8080:80"
