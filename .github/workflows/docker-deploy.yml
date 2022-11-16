@@ -37,6 +37,5 @@ jobs:
           file: .
           build-args: |
             NODE_ENV=production
-            # VITE_SERVER_URL=https://syntax.fun:3030
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/learning-mono-frontend:latest
