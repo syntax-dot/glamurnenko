@@ -50,19 +50,19 @@ defineProps<PurchaseCardProps>()
 .title {
   margin-top: 32px;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .info {
-  font-size: 18px;
+  font-size: 1.1rem;
   margin-left: 30px;
   line-height: 1.4;
 }
 
 .price {
   text-align: center;
-  font-size: 22px;
+  font-size: 1.5rem;
 }
 
 .price:first-child {

@@ -22,7 +22,7 @@ const emit = defineEmits<BaseButtonEmits>()
   border: none;
   border-radius: 4px;
   color: #fff;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

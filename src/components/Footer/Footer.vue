@@ -25,24 +25,26 @@ const links = [
 
 <style module>
 .root {
-  font-size: 12px;
+  font-size: 0.75rem;
   display: grid;
   grid-auto-flow: row;
   justify-content: space-between;
   gap: 8px;
   color: rgba(255, 255, 255, 0.8);
-  padding-left: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 43px 0;
 }
 
 .root > a {
   cursor: pointer;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0); */
 }
 
 a:hover {
   color: rgba(255, 255, 255, 1);
-  /* border-bottom: 1px solid rgba(255, 255, 255, 1); */
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    padding-left: 10px;
+  }
 }
 </style>

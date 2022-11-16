@@ -60,7 +60,6 @@ const links: NavigationLinkProps[] = [
   grid-auto-flow: column;
   align-items: center;
   transition: all 0.3s ease-in-out;
-  padding: 0 20px;
   z-index: 2;
 }
 
@@ -70,6 +69,7 @@ const links: NavigationLinkProps[] = [
   height: 60px;
   background: rgba(0, 0, 0, 0.8);
   z-index: 3;
+  padding: 0 10px;
 }
 
 .left, .right {
@@ -78,7 +78,7 @@ const links: NavigationLinkProps[] = [
 }
 .left {
   justify-content: start;
-  grid-gap: 24px;
+  grid-gap: 26px;
 }
 
 .right {
@@ -86,9 +86,9 @@ const links: NavigationLinkProps[] = [
   grid-gap: 66px;
 }
 
-/* @media screen and (max-width: 1024px) {
-  .right {
-    justify-content: start;
+@media screen and (max-width: 1024px) {
+  .root {
+    padding: 0 10px;
   }
-} */
+}
 </style>

@@ -12,7 +12,7 @@
 <style module>
 .root {
   text-align: right;
-  font-size: 7px;
+  font-size: 0.45rem;
 }
 
 .root > h1 {

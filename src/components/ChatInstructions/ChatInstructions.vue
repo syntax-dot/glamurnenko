@@ -1,10 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.img"
-         :style="{ backgroundImage: `url(${pathToImg})` }">
-    <!-- <div :class="$style.img"> -->
-         <!-- <img :src="`${pathToImg}`"> -->
-    </div>
+         :style="{ backgroundImage: `url(${pathToImg})` }"/>
 
     <div :class="$style.description">
       {{ description }}
@@ -16,12 +13,6 @@
 import { ChatInstructionsProps } from './ChatInstructions.props'
 
 defineProps<ChatInstructionsProps>()
-
-// function getSvgUrl(name: string): string {
-//   return new URL(`${name}`, import.meta.url).pathname
-// }
-
-// const pathImg = computed(() => getSvgUrl(props.pathToImg))
 </script>
 
 <style module>
@@ -29,7 +20,7 @@ defineProps<ChatInstructionsProps>()
   display: grid;
   grid-template-columns: max-content auto;
   gap: 36px;
-  margin-bottom: 46px;
+  margin-bottom: 48px;
 }
 .img {
   height: 300px;
@@ -39,6 +30,7 @@ defineProps<ChatInstructionsProps>()
 
 .description {
   margin: auto;
-  font-size: 26px;
+  font-size: 1.6rem;
+  line-height: 26px;
 }
 </style>

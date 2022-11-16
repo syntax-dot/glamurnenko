@@ -75,7 +75,7 @@ const introDescription = 'Онлайн-консультация стилиста
 const chatDescriptions: ChatInstructionsProps[] = [
   {
     pathToImg: chat1,
-    description: 'Клиентка просит стилиста выбрать одну из курток милитари',
+    description: 'Клиентка просит стилиста помочь выбрать одну из курток милитари',
   },
   {
     pathToImg: chat2,
@@ -116,7 +116,8 @@ const chatDescriptions: ChatInstructionsProps[] = [
 }
 
 .text > h1 {
-  font-size: 40px;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 60px;
 }
@@ -126,7 +127,7 @@ const chatDescriptions: ChatInstructionsProps[] = [
   height: 28px;
   width: 250px;
   background-color: #fc0b38;
-  font-size: 18px;
+  font-size: 1.2rem;
   text-align: center;
   color: #fff;
   transform: rotate(320deg);
@@ -140,20 +141,19 @@ const chatDescriptions: ChatInstructionsProps[] = [
   margin: 40px 40px 0 40px;
   line-height: 1.8;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
 .image {
   height: 100%;
   width: 100%;
-  /* background-image: url(../../assets/Images/preview/form-reservation-bigcolor.jpg); */
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
   user-select: none;
-  margin-bottom: 108px;
+  margin-bottom: 105px;
 }
 
 .discription {
@@ -161,18 +161,18 @@ const chatDescriptions: ChatInstructionsProps[] = [
   grid-auto-flow: row;
   grid-gap: 36px;
   height: 100%;
-  margin: 60px 250px 0 250px;
+  margin: 24px 250px 0 250px;
   text-align: left;
   /* line-height: 3.1; */
 }
 
 .discription > h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 
 .discription > div {
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .instruction {
@@ -189,7 +189,7 @@ const chatDescriptions: ChatInstructionsProps[] = [
 }
 
 .chat > h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-bottom: 40px;
 }
 </style>

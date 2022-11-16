@@ -50,6 +50,8 @@ const cards: PurchaseCardProps[] = [
 
 .root > h1 {
   text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
 }
 
 .cards {

@@ -51,7 +51,7 @@ function toTop() {
   border: 1px solid #fff;
   border-radius: 2px;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.7rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

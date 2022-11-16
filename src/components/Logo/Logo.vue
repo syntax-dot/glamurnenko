@@ -42,13 +42,12 @@
 }
 
 .title > h1 {
-  font-size: 22px;
-  letter-spacing: -1px;
+  font-size: 1.3rem;
 }
 
 .title > h2 {
   color: #c2af8f;
-  font-size: 15px;
+  font-size: 0.9rem;
   letter-spacing: -1px;
   font-weight: 500;
   text-decoration: underline;
