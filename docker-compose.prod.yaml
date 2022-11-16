@@ -19,7 +19,7 @@ services:
       - ./certbot/conf/:/etc/letsencrypt/:rw
   
   frontend:
-    image: spa
+    image: glamurnenko
     build:
       args:
         - NODE_ENV=production

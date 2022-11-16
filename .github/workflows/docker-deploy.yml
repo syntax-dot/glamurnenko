@@ -38,4 +38,4 @@ jobs:
           build-args: |
             NODE_ENV=production
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/spa-frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/glamurnenko-frontend:latest
