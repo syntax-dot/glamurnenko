@@ -13,6 +13,7 @@
 .root {
   text-align: right;
   font-size: 0.45rem;
+  cursor: pointer;
 }
 
 .root > h1 {

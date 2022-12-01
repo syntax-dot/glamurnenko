@@ -24,12 +24,17 @@ import { UpButton } from './components/UpButton'
   background-color: #000;
 }
 .root {
+  justify-content: center;
   display: grid;
-  margin: 0 380px;
+  grid-template-areas: 'Header' 'Content' 'Footer';
 }
 
 .header {
   width: 100%;
+}
+
+.content {
+  max-width: 1390px;
 }
 
 .footer {
@@ -41,15 +46,11 @@ import { UpButton } from './components/UpButton'
 }
 
 @media screen and (max-width: 1440px) {
-  .root {
-    margin: 0 120px;
-  }
+
 }
 
 @media screen and (max-width: 1024px) {
-  .root {
-    margin: 0;
-  }
+
 }
 </style>
 

@@ -67,12 +67,13 @@ const links: NavigationLinkProps[] = [
 .root {
   position: sticky;
   top: 0;
-  height: 124px;
+  height: 80px;
   box-sizing: border-box;
   padding: 0 20px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
+  user-select: none;
   opacity: 1;
   transition: opacity 0.4s;
   z-index: 3;

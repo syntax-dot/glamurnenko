@@ -13,7 +13,8 @@ import { ServiceDescription } from '../components/ServiceDescription'
 
 <style module>
 .root {
-  height: 100%;
+  user-select: none;
+  /* height: 100%; */
   /* height: 100vh; */
 }
 
