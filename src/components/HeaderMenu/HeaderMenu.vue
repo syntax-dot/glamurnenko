@@ -1,7 +1,7 @@
 <template>
   <div :class="[$style.root, {
     [$style.hidden]: hidden,
-    [$style.black]: scrollTop > 500,
+    [$style.black]: scrollTop > 600,
   }]">
     <div :class="$style.left">
       <NavigationLink v-for="link, index in links"
