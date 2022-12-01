@@ -33,6 +33,7 @@ import vk from '../../assets/Images/social/vk.png'
 .root {
   display: grid;
   grid-auto-flow: column;
+  gap: 10px;
   align-items: center;
   transition: all 0.3 ease-in-out;
 }

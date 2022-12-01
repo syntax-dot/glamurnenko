@@ -1,6 +1,7 @@
 <template>
   <div :class="[$style.root, {
-    [$style.fixed]: scrollTop > 650
+    [$style.hidden]: hidden,
+    [$style.black]: scrollTop > 500,
   }]">
     <div :class="$style.left">
       <NavigationLink v-for="link, index in links"
@@ -22,20 +23,33 @@ import { NavigationLink } from '../NavigationLink'
 import { NavigationLinkProps } from '../NavigationLink/NavigationLink.props'
 import { SocialLinks } from '../SocialLinks'
 import { onMounted, onUnmounted, ref } from 'vue'
+import { useThrottleFn } from '@vueuse/core'
 
+const hidden = ref(false)
 const scrollTop = ref(0)
+const oldScrollTop = ref(0)
+
+const throttledFn = useThrottleFn(() => {
+  scrollTop.value = window.scrollY
+
+  handleOpacity(scrollTop.value, oldScrollTop.value)
+
+  oldScrollTop.value = scrollTop.value
+}, 100)
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', throttledFn)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('scroll', throttledFn)
 })
 
-function handleScroll(e: Event) {
-  scrollTop.value = window.scrollY
-  console.log(e)
+function handleOpacity(scrollTop: number, oldScroll: number) {
+  if (scrollTop > 500 && scrollTop > oldScroll)
+    return hidden.value = true
+
+  return hidden.value = false
 }
 
 const links: NavigationLinkProps[] = [
@@ -51,25 +65,25 @@ const links: NavigationLinkProps[] = [
 
 <style module>
 .root {
-  position: relative;
+  position: sticky;
   top: 0;
-  left: 0;
   height: 124px;
   box-sizing: border-box;
+  padding: 0 20px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  transition: all 0.3s ease-in-out;
-  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.4s;
+  z-index: 3;
 }
 
-.fixed {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 3;
-  padding: 0 10px;
+.hidden {
+  opacity: 0;
+}
+
+.black {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .left, .right {
