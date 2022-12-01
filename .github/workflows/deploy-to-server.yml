@@ -60,3 +60,5 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           script: | 
             docker-compose pull
+            docker-compose down
+            docker-compose up -d
