@@ -18,7 +18,7 @@ services:
       - ./certbot/conf/:/etc/letsencrypt/:rw
   
   frontend:
-    image: syntaxname/glamurnenko-frontend
+    image: syntaxname/glamurnenko-frontend:latest
     restart: unless-stopped
     # ports:
     #   - "8080:80"
