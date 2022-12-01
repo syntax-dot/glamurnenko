@@ -1,11 +1,10 @@
 version: '3.8'
 services:
   frontend:
-    image: glamurnenko
+    image: docker pull syntaxname/glamurnenko-frontend:latest
     build:
       args:
         - NODE_ENV=production
       context: .
-      dockerfile: .
     ports:
       - "8080:80"
